@@ -18,6 +18,11 @@ export class PetsListComponent implements OnInit {
     this.pets = this.petService.getPets();
   }
 
+  deletePet(id: number) {
+    this.petService.deletePet(id);
+    this.pets = this.petService.getPets();
+  }
+
 
 
 }

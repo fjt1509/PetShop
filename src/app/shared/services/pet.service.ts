@@ -32,5 +32,9 @@ export class PetService {
     this.pets[index] = pet;
   }
 
+  deletePet(id: number) {
+    this.pets = this.pets.filter(pet => pet.id !== id);
+  }
+
 }
 
