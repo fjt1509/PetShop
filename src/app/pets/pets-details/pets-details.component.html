@@ -1,0 +1,16 @@
+<button routerLink="/pets"><- Back</button>
+<h1>Pet Details</h1>
+<div *ngIf="pet">
+<h2>{{pet.id}}</h2>
+<h2>{{pet.name}}</h2>
+<h2>{{pet.type}}</h2>
+<h2>{{pet.color}}</h2>
+<h2>{{pet.price}}</h2>
+</div>
+<div *ngIf="!pet">
+  <h2>Pet not found</h2>
+</div>
+
+
+
+
