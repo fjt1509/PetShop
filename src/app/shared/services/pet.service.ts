@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Pet} from '../models/pet';
+import {HttpClient} from '@angular/common/http';
+import {observableToBeFn} from 'rxjs/internal/testing/TestScheduler';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,13 +10,15 @@ import {Pet} from '../models/pet';
 export class PetService {
   pets: Pet[];
   id = 1;
-  constructor() {
+  apiUrl = 'https://petshop-easv-tubaek.azurewebsites.net/api/pets';
+  constructor(private  http: HttpClient) {
     this.pets = [
     {id: this.id++, name: 'Miser', type: 'Cat', color: 'Blue', price: 2005},
     {id: this.id++, name: 'Vuffer', type: 'Dog', color: 'Red', price: 15000}]; }
 
-  getPets(): Pet[] {
-    return this.pets;
+  getPets(): Observable<Pet[]> {
+    return this.http.get<Pet[]>
+    (this.apiUrl);
   }
 
   addPet(pet: Pet) {
@@ -22,8 +27,8 @@ export class PetService {
     this.pets.push(pet);
   }
 
-  getPetById(id: number) {
-    return this.pets.find(pet => pet.id === id);
+  getPetById(id: number): Observable<Pet> {
+    return this.http.get<Pet>(this.apiUrl + '/' + id);
   }
 
   updatePet(pet: Pet) {
@@ -32,8 +37,8 @@ export class PetService {
     this.pets[index] = pet;
   }
 
-  deletePet(id: number) {
-    this.pets = this.pets.filter(pet => pet.id !== id);
+  deletePet(id: number): Observable<any> {
+    return this.http.delete(this.apiUrl + '/' + id);
   }
 
 }

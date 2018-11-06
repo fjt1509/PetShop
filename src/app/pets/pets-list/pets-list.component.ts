@@ -15,12 +15,17 @@ export class PetsListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.pets = this.petService.getPets();
+    this.refresh();
+  }
+
+  refresh() {
+    this.petService.getPets().subscribe(listOfPets => {this.pets = listOfPets; });
   }
 
   deletePet(id: number) {
-    this.petService.deletePet(id);
-    this.pets = this.petService.getPets();
+    this.petService.deletePet(id).subscribe(message => {console.log('Deleted Pet' + message);
+      this.refresh();
+    });
   }
 
 
