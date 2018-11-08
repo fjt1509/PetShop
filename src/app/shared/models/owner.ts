@@ -1,3 +1,5 @@
+import {Pet} from './pet';
+
 export class Owner {
   id: number;
   firstName: string;
@@ -5,5 +7,6 @@ export class Owner {
   address: string;
   phoneNumber: string;
   email: string;
+  listOfPets?: Pet[];
 }
 

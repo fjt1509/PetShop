@@ -1,3 +1,5 @@
+import {Owner} from './owner';
+
 export class Pet {
   id: number;
   name: string;
@@ -6,5 +8,6 @@ export class Pet {
   soldDate?: Date;
   color: string;
   price: number;
+  previousOwner?: Owner;
 
 }

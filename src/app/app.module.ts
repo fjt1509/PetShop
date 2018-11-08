@@ -11,6 +11,17 @@ import { PetAddComponent } from './pets/pet-add/pet-add.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { PetUpdateComponent } from './pets/pet-update/pet-update.component';
 import {HttpClientModule} from '@angular/common/http';
+import { OwnerAddComponent } from './owners/owner-add/owner-add.component';
+import { OwnerUpdateComponent } from './owners/owner-update/owner-update.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MzNavbarModule } from 'ngx-materialize';
+import { MzProgressModule } from 'ngx-materialize';
+import { MzCardModule } from 'ngx-materialize';
+import { MzButtonModule } from 'ngx-materialize';
+import { MzIconModule, MzIconMdiModule } from 'ngx-materialize';
+import { MzDropdownModule } from 'ngx-materialize';
+import { MzSidenavModule } from 'ngx-materialize';
+
 
 @NgModule({
   declarations: [
@@ -20,13 +31,24 @@ import {HttpClientModule} from '@angular/common/http';
     WelcomeComponent,
     PetsDetailsComponent,
     PetAddComponent,
-    PetUpdateComponent
+    PetUpdateComponent,
+    OwnerAddComponent,
+    OwnerUpdateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MzNavbarModule,
+    MzProgressModule,
+    MzCardModule,
+    MzIconModule,
+    MzIconMdiModule,
+    MzButtonModule,
+    MzDropdownModule,
+    MzSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
-<button routerLink="/pets"><- Back</button>
+<dir class="container">
+<button mz-button routerLink="/pets">Back</button>
 <h1>Pet Details</h1>
 <div *ngIf="pet">
 <h2>{{pet.id}}</h2>
@@ -10,7 +11,7 @@
 <div *ngIf="!pet">
   <h2>Pet not found</h2>
 </div>
-
+</dir>
 
 
 

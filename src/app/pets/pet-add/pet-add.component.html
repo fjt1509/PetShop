@@ -1,4 +1,4 @@
-<button routerLink="/pets"><- Back</button>
+<div class="container">
 
 
 <form [formGroup]="petForm" (ngSubmit)="save()">
@@ -24,6 +24,8 @@
   </label>
 
 
-  <button type="submit">Save</button>
+  <button mz-button routerLink="/pets">Back</button>
+  <button mz-button type="submit">Add pet</button>
 
 </form>
+</div>

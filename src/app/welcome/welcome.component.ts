@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class WelcomeComponent implements OnInit {
   title = 'Welcome';
   constructor() { }
-
   ngOnInit() {
+
+    $('.dropdown-trigger').dropdown();
+
   }
 
 }
