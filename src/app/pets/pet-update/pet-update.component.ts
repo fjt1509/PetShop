@@ -36,10 +36,7 @@ export class PetUpdateComponent implements OnInit {
     save() {
       const pet = this.petForm.value;
       pet.id = this.id;
-      this.petService.updatePet(pet);
-      this.petForm.reset();
-      this.router.navigateByUrl('/pets');
-
+      this.petService.updatePet(pet).subscribe(petUpdtead => {this.router.navigateByUrl('/pets'); });
     }
 
 
