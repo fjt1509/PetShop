@@ -1,3 +1,36 @@
-<p>
-  owner-update works!
-</p>
+<div class="container">
+
+
+  <form [formGroup]="ownerForm" (ngSubmit)="save()">
+
+    <label>
+      Owner First Name:
+      <input type="text" formControlName="firstName">
+    </label>
+
+    <label>
+      Owner Last Name:
+      <input type="text" formControlName="lastName">
+    </label>
+
+    <label>
+      Owner Address:
+      <input type="text" formControlName="address">
+    </label>
+
+    <label>
+      Phone number:
+      <input type="text" formControlName="phoneNumber">
+    </label>
+
+    <label>
+      Email:
+      <input type="text" formControlName="email">
+    </label>
+
+
+    <button mz-button routerLink="/owners">Back</button>
+    <button mz-button type="submit">Update Owner</button>
+
+  </form>
+</div>

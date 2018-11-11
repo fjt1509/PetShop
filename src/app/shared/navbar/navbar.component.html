@@ -9,12 +9,19 @@
   <a href="#"  class="brand-logo center">Pet Shop</a>
   <mz-navbar-item-container [align]="'left'">
     <mz-navbar-item><a routerLink="/"><i mz-icon [icon]="'home'"></i></a></mz-navbar-item>
+
     <mz-navbar-item><a routerLink="/pets">Pets</a></mz-navbar-item>
     <mz-navbar-item><a routerLink="/pet-add">Add Pet</a></mz-navbar-item>
 
+    <mz-navbar-item><a routerLink="/owners">Owners</a></mz-navbar-item>
+    <mz-navbar-item><a routerLink="/owner-add">Add Owner</a></mz-navbar-item>
 
 
   </mz-navbar-item-container>
+  <mz-navbar-item-container [align]="'right'">
+    <mz-navbar-item><a><i class="material-icons left">person</i>Login</a></mz-navbar-item>
+  </mz-navbar-item-container>
+
 </mz-navbar>
 
 

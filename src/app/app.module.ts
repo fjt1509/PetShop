@@ -8,19 +8,21 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { PetsDetailsComponent } from './pets/pets-details/pets-details.component';
 import { PetAddComponent } from './pets/pet-add/pet-add.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PetUpdateComponent } from './pets/pet-update/pet-update.component';
 import {HttpClientModule} from '@angular/common/http';
 import { OwnerAddComponent } from './owners/owner-add/owner-add.component';
 import { OwnerUpdateComponent } from './owners/owner-update/owner-update.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MzNavbarModule } from 'ngx-materialize';
+import {MzCollapsibleModule, MzCollectionModule, MzInputModule, MzNavbarModule, MzSpinnerModule} from 'ngx-materialize';
 import { MzProgressModule } from 'ngx-materialize';
 import { MzCardModule } from 'ngx-materialize';
 import { MzButtonModule } from 'ngx-materialize';
 import { MzIconModule, MzIconMdiModule } from 'ngx-materialize';
 import { MzDropdownModule } from 'ngx-materialize';
 import { MzSidenavModule } from 'ngx-materialize';
+import { OwnerListComponent } from './owners/owner-list/owner-list.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { MzSidenavModule } from 'ngx-materialize';
     PetAddComponent,
     PetUpdateComponent,
     OwnerAddComponent,
-    OwnerUpdateComponent
+    OwnerUpdateComponent,
+    OwnerListComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +52,12 @@ import { MzSidenavModule } from 'ngx-materialize';
     MzIconMdiModule,
     MzButtonModule,
     MzDropdownModule,
-    MzSidenavModule
+    MzSidenavModule,
+    MzCollapsibleModule,
+    MzCollectionModule,
+    MzInputModule,
+    MzSpinnerModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

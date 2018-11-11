@@ -1,14 +1,16 @@
 <dir class="container">
-<button mz-button routerLink="/pets">Back</button>
-<h1>Pet Details</h1>
-<div *ngIf="pet">
-<h2>{{pet.id}}</h2>
-<h2>{{pet.name}}</h2>
-<h2>{{pet.type}}</h2>
-<h2>{{pet.color}}</h2>
-<h2>{{pet.price}}</h2>
+  <img src="https://ybxzcgnc7b-flywheel.netdna-ssl.com/wp-content/uploads/2017/11/cute.jpg">
+
+  <div *ngIf="pet">
+<h2>Pet ID: {{pet.id}}</h2>
+<h2>Name: {{pet.name}}</h2>
+<h2>Type: {{pet.type}}</h2>
+<h2>Color: {{pet.color}}</h2>
+<h2>{{pet.price}} €</h2>
 </div>
-<div *ngIf="!pet">
+  <button mz-button routerLink="/pets">Back</button>
+
+  <div *ngIf="!pet">
   <h2>Pet not found</h2>
 </div>
 </dir>

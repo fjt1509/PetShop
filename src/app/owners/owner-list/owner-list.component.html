@@ -1,0 +1,20 @@
+
+<div class="container">
+
+  <mz-progress *ngIf="!owners"
+               [backgroundClass]="'blue lighten-4'"
+               [progressClass]="'blue'">
+  </mz-progress>
+
+  <div>
+    <ul *ngIf="owners"></ul>
+    <li *ngFor="let owner of owners">
+      <h5>First Name: {{owner.firstName}} LastName: {{owner.lastName}}</h5>
+      <button routerLink="/owner-update/{{owner.id}}">Update</button>
+      <button (click)="deleteOwner(owner.id)">Delete</button>
+
+    </li>
+
+  </div>
+
+</div>

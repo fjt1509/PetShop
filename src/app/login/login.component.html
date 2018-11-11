@@ -1,0 +1,39 @@
+<div class="container">
+
+
+
+  <div *ngIf="!loading" class="login">
+
+    <div class="col s3">
+      <mz-card>
+        <mz-card-title >
+          Login
+        </mz-card-title>
+
+        <mz-card-content>
+          <mz-input-container>
+          <input mz-input placeholder="Username" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+          <input mz-input type="password" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+
+          </mz-input-container>
+        </mz-card-content>
+
+        <mz-card-action>
+          <button mz-button (click)="login()">Login</button>
+          <div>
+            <label *ngIf="errormessage" id="error">Error: {{errormessage}}</label>
+          </div>
+        </mz-card-action>
+
+
+      </mz-card>
+    </div>
+
+  </div>
+
+  <div *ngIf="loading" class="loader">
+    <mz-spinner [color]="'blue'" [size]="'big'"></mz-spinner>
+  </div>
+
+
+</div>
