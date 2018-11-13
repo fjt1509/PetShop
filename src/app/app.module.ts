@@ -14,7 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { OwnerAddComponent } from './owners/owner-add/owner-add.component';
 import { OwnerUpdateComponent } from './owners/owner-update/owner-update.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MzCollapsibleModule, MzCollectionModule, MzInputModule, MzNavbarModule, MzSpinnerModule} from 'ngx-materialize';
+import {MzCollapsibleModule, MzCollectionModule, MzInputModule, MzNavbarModule, MzParallaxModule, MzSpinnerModule} from 'ngx-materialize';
 import { MzProgressModule } from 'ngx-materialize';
 import { MzCardModule } from 'ngx-materialize';
 import { MzButtonModule } from 'ngx-materialize';
@@ -57,7 +57,8 @@ import { LoginComponent } from './login/login.component';
     MzCollectionModule,
     MzInputModule,
     MzSpinnerModule,
-    FormsModule
+    FormsModule,
+    MzParallaxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,28 +1,149 @@
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="javascript:void(0)">one</a></li>
-  <li><a href="javascript:void(0)">two</a></li>
+<ul id="dropdownPets" class="dropdown-content">
+  <li><a routerLink="/pets" style="font-size: small">View Pets</a></li>
   <li class="divider"></li>
-  <li><a href="javascript:void(0)">three</a></li>
+  <li><a routerLink="/pet-add" style="font-size: small;">Add Pet</a></li>
 </ul>
 
-<mz-navbar class="">
+<ul id="dropdownOwners" class="dropdown-content">
+  <li><a routerLink="/owners" style="font-size: small">View Owners</a></li>
+  <li class="divider"></li>
+  <li><a routerLink="/owner-add" style="font-size: small;">Add Owner</a></li>
+</ul>
+
+<mz-navbar [navbarClass]="'green'">
   <a href="#"  class="brand-logo center">Pet Shop</a>
   <mz-navbar-item-container [align]="'left'">
     <mz-navbar-item><a routerLink="/"><i mz-icon [icon]="'home'"></i></a></mz-navbar-item>
 
-    <mz-navbar-item><a routerLink="/pets">Pets</a></mz-navbar-item>
-    <mz-navbar-item><a routerLink="/pet-add">Add Pet</a></mz-navbar-item>
+    <mz-navbar-item>
+      <a class="dropdown-button" href="javascript:void(0)" data-activates="dropdownPets">
+        Pets
+        <i class="material-icons right">arrow_drop_down</i>
+      </a>
+    </mz-navbar-item>
 
-    <mz-navbar-item><a routerLink="/owners">Owners</a></mz-navbar-item>
-    <mz-navbar-item><a routerLink="/owner-add">Add Owner</a></mz-navbar-item>
-
+    <mz-navbar-item>
+      <a class="dropdown-button" href="javascript:void(0)" data-activates="dropdownOwners">
+        Owners
+        <i class="material-icons right">arrow_drop_down</i>
+      </a>
+    </mz-navbar-item>
 
   </mz-navbar-item-container>
   <mz-navbar-item-container [align]="'right'">
-    <mz-navbar-item><a><i class="material-icons left">person</i>Login</a></mz-navbar-item>
+    <mz-navbar-item><a id="btn-sidenav-demo"><i class="material-icons left">menu</i></a></mz-navbar-item>
   </mz-navbar-item-container>
 
 </mz-navbar>
+
+<mz-sidenav #sidenav
+            [id]="'sidenav-demo'"
+            [collapseButtonId]="'btn-sidenav-demo'"
+            [edge]="'right'">
+
+  <mz-sidenav-header>
+    <div class="user-view">
+      <img class="circle avatar" src="https://ng2-materialize.herokuapp.com/assets/sidenav-demo-avatar.png">
+      <div class="white-text name">King Nobody</div>
+      <div class="white-text email">king.nobody@gmail.com</div>
+    </div>
+  </mz-sidenav-header>
+
+  <mz-sidenav-subheader>Link Subheader</mz-sidenav-subheader>
+
+  <mz-sidenav-link>
+    <a>First Link</a>
+  </mz-sidenav-link>
+
+  <mz-sidenav-link [active]="true">
+    <a>Active Link</a>
+  </mz-sidenav-link>
+
+  <mz-sidenav-link>
+    <a class="waves-effect">Second Link With Waves</a>
+  </mz-sidenav-link>
+
+  <mz-sidenav-divider></mz-sidenav-divider>
+
+  <mz-sidenav-link>
+    <a><i mz-icon-mdi [icon]="'cloud'"></i>Third Link With Icon</a>
+  </mz-sidenav-link>
+
+  <mz-sidenav-link>
+    <a mz-icon-mdi [icon]="'earth'">Fourth Link With Icon</a>
+  </mz-sidenav-link>
+
+  <mz-sidenav-divider></mz-sidenav-divider>
+
+  <mz-sidenav-subheader>Collapsible Subheader</mz-sidenav-subheader>
+
+  <mz-sidenav-collapsible>
+
+    <mz-sidenav-collapsible-header>
+      Collapsible
+    </mz-sidenav-collapsible-header>
+
+    <mz-sidenav-collapsible-content>
+
+      <mz-sidenav-link>
+        <a class="waves-effect">First Link</a>
+      </mz-sidenav-link>
+
+      <mz-sidenav-link>
+        <a class="waves-effect">Second Link</a>
+      </mz-sidenav-link>
+
+      <mz-sidenav-link>
+        <a class="waves-effect">Third Link</a>
+      </mz-sidenav-link>
+    </mz-sidenav-collapsible-content>
+  </mz-sidenav-collapsible>
+
+  <mz-sidenav-collapsible>
+
+    <mz-sidenav-collapsible-header>
+      <i mz-icon-mdi [icon]="'menu-right'" class="caret"></i>Collapsible With Carret
+    </mz-sidenav-collapsible-header>
+
+    <mz-sidenav-collapsible-content>
+
+      <mz-sidenav-link>
+        <a class="waves-effect">First Link</a>
+      </mz-sidenav-link>
+
+      <mz-sidenav-link>
+        <a class="waves-effect">Second Link</a>
+      </mz-sidenav-link>
+
+      <mz-sidenav-link>
+        <a class="waves-effect">Third Link</a>
+      </mz-sidenav-link>
+    </mz-sidenav-collapsible-content>
+  </mz-sidenav-collapsible>
+
+  <mz-sidenav-collapsible>
+
+    <mz-sidenav-collapsible-header>
+      <i mz-icon-mdi [icon]="'diamond'"></i>Collapsible With Icon
+    </mz-sidenav-collapsible-header>
+
+    <mz-sidenav-collapsible-content>
+
+      <mz-sidenav-link>
+        <a class="waves-effect"><i mz-icon-mdi [icon]="'palette'"></i>First Link</a>
+      </mz-sidenav-link>
+
+      <mz-sidenav-link>
+        <a class="waves-effect"><i mz-icon-mdi [icon]="'flash'"></i>Second Link</a>
+      </mz-sidenav-link>
+
+      <mz-sidenav-link>
+        <a class="waves-effect"><i mz-icon-mdi [icon]="'gamepad'"></i>Third Link</a>
+      </mz-sidenav-link>
+    </mz-sidenav-collapsible-content>
+  </mz-sidenav-collapsible>
+</mz-sidenav>
+
 
 
 

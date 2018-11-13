@@ -10,7 +10,6 @@ export class WelcomeComponent implements OnInit {
   constructor() { }
   ngOnInit() {
 
-    $('.dropdown-trigger').dropdown();
 
   }
 

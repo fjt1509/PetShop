@@ -6,24 +6,26 @@
 
 <div class="container">
   <div class="row">
-    <div class="col s3" *ngFor="let pet of pets">
+    <div class="col s4" *ngFor="let pet of pets">
 <mz-card
-  class="blue-grey darken-1 white-text"
+  class="green lighten-1 white-text"
   [horizontal]="true"
   [hoverable]="true"
-  routerLink="/pets/{{pet.id}}">
-    <mz-card-title>
+  style="margin-top: 65px">
+    <mz-card-title style="font-size: xx-large">
       {{pet.name}}
     </mz-card-title>
     <mz-card-content>
       <p>Type: {{pet.type}}</p>
       <p>Color: {{pet.color}}</p>
       <p>Born: {{pet.birtdate}}</p>
-
     </mz-card-content>
     <mz-card-action>
-      <button mz-button button [float]="true"  routerLink="/pet-update/{{pet.id}}"><i mz-icon [icon]="'edit'"></i></button>
-      <button mz-button [float]="true" (click)="deletePet(pet.id)"><i mz-icon [icon]="'delete'"></i></button>
+      <p style="font-size: larger; margin-top: 10px; margin-left: 9px">Price: {{pet.price}} $</p>
+      <button mz-button class="blue" routerLink="/pets/{{pet.id}}" style="margin-left: 2%;">Details</button>
+
+      <button mz-button class="red" [float]="true" (click)="deletePet(pet.id)" style="margin-left: 2%; float: right"><i mz-icon [icon]="'delete'"></i></button>
+      <button mz-button class="blue" [float]="true"  routerLink="/pet-update/{{pet.id}}" style="float: right"><i mz-icon [icon]="'edit'"></i></button>
     </mz-card-action>
 </mz-card>
     </div>

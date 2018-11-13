@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AuthenticationService} from './shared/services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'PetShop';
+  loggedIn: string;
+
+  constructor (auth: AuthenticationService){
+   // this.loggedIn = auth.login();
+  }
 }

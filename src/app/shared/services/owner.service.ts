@@ -19,11 +19,11 @@ export class OwnerService {
   owners: Owner[];
   id = 1;
   apiUrl = 'https://petshop-easv-tubaek.azurewebsites.net/api/owners';
-  constructor(private  http: HttpClient,private authenticationService: AuthenticationService) {}
+  constructor(private  http: HttpClient, private authenticationService: AuthenticationService) {}
 
   getOwners(): Observable<Owner[]> {
-    return this.http.get<Owner[]>
-    (this.apiUrl);
+    httpOptions.headers = httpOptions.headers.set('Authorization', 'Bearer ' + this.authenticationService.getToken());
+    return this.http.get<Owner[]>(this.apiUrl, httpOptions);
   }
 
   addOwner(owner: Owner): Observable<Owner> {

@@ -6,15 +6,32 @@
                [progressClass]="'blue'">
   </mz-progress>
 
-  <div>
-    <ul *ngIf="owners"></ul>
-    <li *ngFor="let owner of owners">
-      <h5>First Name: {{owner.firstName}} LastName: {{owner.lastName}}</h5>
-      <button routerLink="/owner-update/{{owner.id}}">Update</button>
-      <button (click)="deleteOwner(owner.id)">Delete</button>
+  <div class="row" id="ownerList" style="margin-top: 50px; ">
 
-    </li>
+    <mz-collapsible class="col s3" style="width: 500px; margin-left: 250px;" [mode]="'expandable'" *ngFor="let owner of owners">
+
+
+      <mz-collapsible-item>
+        <mz-collapsible-item-header style="width: 100%">
+          {{owner.firstName}}
+          {{owner.lastName}}
+          <span style="float: right">
+            <button  style="margin-right: 5px" mz-button class="red" [float]="true" (click)="deleteOwner(owner.id)" ><i style="margin: 0rem" mz-icon [icon]="'delete'"></i></button>
+            <button mz-button class="blue" [float]="true"  routerLink="/owner-update/{{owner.id}}" ><i style="margin: 0rem" mz-icon [icon]="'edit'"></i></button>
+          </span>
+        </mz-collapsible-item-header>
+        <mz-collapsible-item-body>
+          <p>{{owner.id}}</p>
+          <p>{{owner.email}}</p>
+          <p>{{owner.address}}</p>
+          <p>{{owner.phoneNumber}}</p>
+
+        </mz-collapsible-item-body>
+      </mz-collapsible-item>
+    </mz-collapsible>
 
   </div>
+
+
 
 </div>
