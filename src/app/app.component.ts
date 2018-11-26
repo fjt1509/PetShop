@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'PetShop';
   loggedIn: string;
 
-  constructor (auth: AuthenticationService){
-   // this.loggedIn = auth.login();
+  constructor (auth: AuthenticationService) {
+
   }
 }

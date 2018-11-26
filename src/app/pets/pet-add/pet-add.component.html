@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="margin-top: 5%">
 
 
 <form [formGroup]="petForm" (ngSubmit)="save()">
@@ -22,6 +22,48 @@
     Pet Price:
     <input type="text" formControlName="price">
   </label>
+
+
+  <div class="section">
+
+    <div class="row m-valign-wrapper">
+
+      <mz-datepicker-container class="col s12 m6">
+
+        <input mz-datepicker
+               [label]="'Pet Birthdate'"
+               formControlName="birthdate"
+               [ngModel]
+               id="prefix-datepicker"
+               type="tel" />
+        <i mz-icon-mdi mz-input-prefix
+           [icon]="'calendar'">
+        </i>
+      </mz-datepicker-container>
+
+    </div>
+  </div>
+
+<!--
+  <div class="row m-valign-wrapper">
+
+    <mz-select-container class="col s12 m6">
+      <select mz-select
+              id="basic-select"
+              [label]="'Previous Pet Owner'"
+              [placeholder]="'Select an owner'"
+              [formControlName]="'previousOwner'">
+        <option *ngFor="let owner of owners">{{owner.firstName}} {{owner.lastName}}</option>
+        <option>No Owner</option>
+
+      </select>
+    </mz-select-container>
+
+
+  </div>
+
+-->
+
 
 
   <button mz-button routerLink="/pets"><i mz-icon [icon]="'chevron_left'" [align]="'left'"></i>Back</button>

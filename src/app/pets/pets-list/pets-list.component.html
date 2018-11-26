@@ -18,11 +18,11 @@
     <mz-card-content>
       <p>Type: {{pet.type}}</p>
       <p>Color: {{pet.color}}</p>
-      <p>Born: {{pet.birtdate}}</p>
+      <p>Born: {{pet.birthdate}}</p>
     </mz-card-content>
     <mz-card-action>
       <p style="font-size: larger; margin-top: 10px; margin-left: 9px">Price: {{pet.price}} $</p>
-      <button mz-button class="blue" routerLink="/pets/{{pet.id}}" style="margin-left: 2%;">Details</button>
+      <button mz-button class="blue" routerLink="/pets/{{pet.id}}" style="margin-left: 2%; float: left">Details</button>
 
       <button mz-button class="red" [float]="true" (click)="deletePet(pet.id)" style="margin-left: 2%; float: right"><i mz-icon [icon]="'delete'"></i></button>
       <button mz-button class="blue" [float]="true"  routerLink="/pet-update/{{pet.id}}" style="float: right"><i mz-icon [icon]="'edit'"></i></button>

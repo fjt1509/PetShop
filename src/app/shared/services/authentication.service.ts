@@ -9,6 +9,7 @@ import {map} from 'rxjs/operators';
 export class AuthenticationService {
 
   apiUrl = 'https://petshop-easv-tubaek.azurewebsites.net/api/token';
+  isLoggedIn: boolean;
 
 
   constructor(private http: HttpClient) { }
